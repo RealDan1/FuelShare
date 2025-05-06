@@ -1,0 +1,14 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  gap: 2px;
+}
+
+.footer {
+  margin-top: auto;
+}
