@@ -12,3 +12,68 @@ nav {
 .footer {
   margin-top: auto;
 }
+
+/* Mobile First */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.logo {
+  order: 2; /* Center on mobile */
+}
+
+.hamburger-button {
+  order: 3; /* Right side on mobile */
+  display: block;
+}
+
+.settings {
+  order: 1; /* Left side on mobile */
+  display: none;
+}
+
+.nav-links {
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: 0;
+  background: white;
+  flex-direction: column;
+  width: auto;
+  display: none; /* Hidden by default on mobile */
+  z-index: 10;
+}
+
+.nav-links.is-open {
+  display: flex; /* Show when menu is open */
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .logo {
+    order: 1; /* Left on desktop */
+  }
+
+  .hamburger-button {
+    display: none; /* Hide hamburger on desktop */
+  }
+
+  .settings {
+    order: 3; /* Right on desktop */
+    display: none;
+  }
+
+  .nav-links {
+    order: 2; /* Middle on desktop */
+
+    position: static; /* Not absolute anymore */
+    flex-direction: row;
+    gap: 1rem;
+    display: flex; /* Always visible */
+    width: auto;
+  }
+}
