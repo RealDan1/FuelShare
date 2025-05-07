@@ -64,13 +64,14 @@ a {
   color: #e3e3e3;
   padding: 8px 12px;
   margin: 0px;
-  /* border-radius: 7px; */
+  border-radius: 0px;
   border: none;
 }
 
 .hamburger-button:hover {
   background-color: #2a3749;
   transition: 0.3s ease;
+  border-radius: none;
 }
 
 .settings {

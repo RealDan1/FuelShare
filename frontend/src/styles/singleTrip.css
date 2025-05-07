@@ -1,0 +1,72 @@
+#main-body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  margin: 5%;
+}
+
+#fuel-calculator-form {
+  margin-top: 10px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #242c35;
+  border: 1px solid #3a4e66;
+  border-radius: 7px;
+}
+
+input {
+  padding: 10px;
+  margin: 0px 10px;
+  border-radius: 5px;
+  border: 1px solid #3a4e66;
+  background-color: #202a36;
+  color: #e3e3e3;
+}
+
+/* remove ugly white border that gets added when selecting an input field - due to the code below: */
+input:focus {
+  outline: none;
+  border: 1px solid #3a4e66;
+  box-shadow: 0 0 5px #34465c;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+/* style number input to make spinner buttons match style of website and not look super old and microsoft xp like */
+
+label {
+  margin: 5px 10px;
+  color: #e3e3e3;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px #3a4e66;
+  background-color: #344253;
+  color: #e3e3e3;
+  cursor: pointer;
+  margin: 10px 10px;
+}
+
+@media (min-width: 768px) {
+  #main-body-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  h1 {
+    max-width: 300px;
+  }
+  #fuel-calculator-form {
+    min-width: 300px;
+    max-width: 150%;
+  }
+}
