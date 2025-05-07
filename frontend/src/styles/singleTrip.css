@@ -6,7 +6,10 @@
   margin: 5%;
 }
 
-#fuel-calculator-form {
+#calculator-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
   margin-top: 10px;
   max-width: 100%;
   display: flex;
@@ -15,6 +18,23 @@
   background-color: #242c35;
   border: 1px solid #3a4e66;
   border-radius: 7px;
+}
+
+#calculator-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #242c35;
+  border: none;
+  border-radius: 7px;
+}
+#calculate-button {
+  font-size: large;
 }
 
 input {
@@ -40,7 +60,6 @@ input[type='number']::-webkit-outer-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
-/* style number input to make spinner buttons match style of website and not look super old and microsoft xp like */
 
 label {
   margin: 5px 10px;
@@ -57,16 +76,25 @@ button {
   margin: 10px 10px;
 }
 
+.total-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 15px;
+}
 @media (min-width: 768px) {
   #main-body-container {
     flex-direction: row;
     justify-content: space-around;
   }
+  #calculator-container {
+    min-width: 350px;
+  }
   h1 {
     max-width: 300px;
   }
   #fuel-calculator-form {
-    min-width: 300px;
+    min-width: 700px;
     max-width: 150%;
   }
 }

@@ -44,7 +44,7 @@ const MainLayout = () => {
       <Outlet />
 
       <footer className="footer">
-        <hr /> All rights reserved
+        <p>All rights reserved</p>
       </footer>
     </div>
   );
