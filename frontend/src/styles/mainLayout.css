@@ -1,12 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  background-color: #1c242e;
+  /* padding: 1.5%; */
+}
+
 .main-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  color: #fffeff;
 }
 
 nav {
   display: flex;
   gap: 2px;
+  width: 100%;
+}
+a:visited {
+  color: inherit;
+}
+a {
+  text-decoration: none;
 }
 
 .footer {
@@ -18,17 +39,37 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 00;
   position: relative;
+  width: 100%;
+  border-bottom: 0.5px solid #3a4e66;
+  position: relative;
+  margin-bottom: 20px;
 }
 
-.logo {
-  order: 2; /* Center on mobile */
+#nav-logo {
+  order: 1; /* Center on mobile */
+  padding-left: 10px;
+}
+
+#nav-heading {
+  order: 2;
 }
 
 .hamburger-button {
   order: 3; /* Right side on mobile */
   display: block;
+  background-color: #1c242e;
+  color: #ccc;
+  padding: 8px 12px;
+  margin: 0px;
+  /* border-radius: 7px; */
+  border: none;
+}
+
+.hamburger-button:hover {
+  background-color: #2a3749;
+  transition: 0.3s ease;
 }
 
 .settings {
@@ -38,24 +79,44 @@ nav {
 
 .nav-links {
   position: absolute;
-  top: 100%;
+  top: 120%;
   left: auto;
-  right: 0;
-  background: white;
+  right: 0.5%;
+  background: #273241;
+  /* fairly intense shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   flex-direction: column;
   width: auto;
   display: none; /* Hidden by default on mobile */
   z-index: 10;
+  padding: 0px;
+  /* border: 1px solid #ccc; */
+  border-radius: 7px;
+}
+.nav-item {
+  padding: 9px;
+  color: #2a3749;
 }
 
 .nav-links.is-open {
   display: flex; /* Show when menu is open */
 }
 
+.nav-item.active-tab {
+  /* border-bottom: 1px solid #34465c; */
+  /* z-index: 1; */
+  border-radius: 7px;
+}
+
+.nav-item:hover {
+  background-color: #334257;
+  border-radius: 7px;
+}
+
 /* Desktop styles */
 @media (min-width: 768px) {
-  .logo {
-    order: 1; /* Left on desktop */
+  #nav-logo {
+    order: 3; /* Left on desktop */
   }
 
   .hamburger-button {
@@ -63,17 +124,95 @@ nav {
   }
 
   .settings {
-    order: 3; /* Right on desktop */
+    order: 1; /* Right on desktop */
     display: none;
+  }
+
+  .navigation {
+    padding: 8px 16px;
+  }
+
+  .nav-links.is-open {
+    display: block;
   }
 
   .nav-links {
     order: 2; /* Middle on desktop */
-
+    padding: 0px;
     position: static; /* Not absolute anymore */
     flex-direction: row;
     gap: 1rem;
     display: flex; /* Always visible */
     width: auto;
+    /* bottom: -4px; */
+    display: inline-block;
+    position: relative;
+    background-color: #1c242e;
+    border: none;
+    border-bottom: none; /* Remove bottom border so it doesn't double up with the line */
+    text-decoration: none;
+    color: #ccc;
+    font-weight: bold;
+  }
+
+  .nav-item {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    /* bottom: -0.5px; */
+    /* border: 0.5px solid #3a4e66; */
+    /* border-right: 1px solid #ccc; */
+    border-bottom: none;
+  }
+  .nav-item.active-tab {
+    background-color: #34465c;
+    /* this border bottom is not working? */
+    border-radius: 0px;
+    background-color: #2d3641;
+    border-bottom: 1px solid #34465c;
+    z-index: 1;
+  }
+  .nav-item:hover {
+    background-color: #313c48;
+    border-radius: 0px;
   }
 }
+
+/* main color palette:
+/* ================ */
+
+/* CSS HEX */
+/* --pumice: #d8d9d8;
+--ebony-clay: #1e2630;
+--blue-bayoux: #4e5d6e;
+--oxford-blue: #384452;
+--regent-gray: #89969f;
+--manatee: #94949d;
+--regent-gray: #818b9c;
+--nandor: #4f5c5c;
+--tuna: #3c3e43;
+--scorpion: #5c5c5c; */
+
+/* SCSS HEX */
+/* $pumice: #d8d9d8;
+$ebony-clay: #1e2630;
+$blue-bayoux: #4e5d6e;
+$oxford-blue: #384452;
+$regent-gray: #89969f;
+$manatee: #94949d;
+$regent-gray: #818b9c;
+$nandor: #4f5c5c;
+$tuna: #3c3e43;
+$scorpion: #5c5c5c; */
+
+/* SCSS RGB */
+/* --pumice: rgba(216,217,216,1);
+--ebony-clay: rgba(30,38,48,1);
+--blue-bayoux: rgba(78,93,110,1);
+--oxford-blue: rgba(56,68,82,1);
+--regent-gray: rgba(137,150,159,1);
+--manatee: rgba(148,148,157,1);
+--regent-gray: rgba(129,139,156,1);
+--nandor: rgba(79,92,92,1);
+--tuna: rgba(60,62,67,1);
+--scorpion: rgba(92,92,92,1); */

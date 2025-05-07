@@ -1,6 +1,7 @@
 import SingleTrip from './components/SingleTrip';
 import MainLayout from './components/MainLayout';
 import { Routes, Route } from 'react-router';
+import MultipleTrips from './components/MultipleTrips';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<SingleTrip />} />
-          <Route element />
+          <Route path="/multiple-trips" element={<MultipleTrips />} />
         </Route>
       </Routes>
     </>
