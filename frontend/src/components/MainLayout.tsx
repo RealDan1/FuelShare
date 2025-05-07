@@ -36,7 +36,6 @@ const MainLayout = () => {
           </Link>
         </div>
 
-        {/* Settings */}
         <div className="settings">Settings</div>
         <div id="nav-logo">Logo</div>
       </nav>

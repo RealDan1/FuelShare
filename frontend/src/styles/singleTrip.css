@@ -7,9 +7,6 @@
 }
 
 #calculator-container {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
   margin-top: 10px;
   max-width: 100%;
   display: flex;
@@ -46,7 +43,6 @@ input {
   color: #e3e3e3;
 }
 
-/* remove ugly white border that gets added when selecting an input field - due to the code below: */
 input:focus {
   outline: none;
   border: 1px solid #3a4e66;
@@ -59,6 +55,11 @@ input[type='number']::-webkit-outer-spin-button {
 }
 input[type='number'] {
   -moz-appearance: textfield;
+}
+
+input::placeholder {
+  color: #e3e3e3;
+  opacity: 0.7;
 }
 
 label {

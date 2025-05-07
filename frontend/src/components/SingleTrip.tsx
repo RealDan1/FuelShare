@@ -6,8 +6,6 @@ const SingleTrip = () => {
       <h1>Fuel Share Calculator</h1>
       <div id="calculator-container">
         <form id="calculator-form">
-          {/* add placeholders for input fields instead of labels on top: e.g. Fuel Price (per L): but place price per l at end of textbox as the placeholder, when user starts typing remove only the per l text. ("fuel price "  at left of field should stay) */}
-
           <input type="number" id="distance" name="distance" required placeholder="Distance (km):" />
 
           <input
@@ -19,7 +17,6 @@ const SingleTrip = () => {
           />
 
           <input type="number" id="fuel-price" name="fuel-price" required placeholder="Fuel Price (L)" />
-          {/* add field for number of people to split fuel between */}
 
           <input type="number" id="people" name="people" required placeholder="Number of People:" />
 
@@ -27,7 +24,7 @@ const SingleTrip = () => {
             Calculate
           </button>
         </form>
-        {/* add totals field here, cost per person and total cost */}
+
         <div id="totals">
           <h2>Totals</h2>
           <div className="total-field">
