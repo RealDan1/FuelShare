@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   /* border: 1px solid red; */
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -15,7 +16,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 
-  color: #fffeff;
+  color: #e3e3e3;
 }
 
 nav {
@@ -60,7 +61,7 @@ a {
   order: 3; /* Right side on mobile */
   display: block;
   background-color: #1c242e;
-  color: #ccc;
+  color: #e3e3e3;
   padding: 8px 12px;
   margin: 0px;
   /* border-radius: 7px; */
@@ -90,12 +91,13 @@ a {
   display: none; /* Hidden by default on mobile */
   z-index: 10;
   padding: 0px;
-  /* border: 1px solid #ccc; */
+  /* border: 1px solid #e3e3e3; */
   border-radius: 7px;
 }
 .nav-item {
   padding: 9px;
   color: #2a3749;
+  font-weight: 300;
 }
 
 .nav-links.is-open {
@@ -130,6 +132,9 @@ a {
 
   .navigation {
     padding: 8px 16px;
+    border-bottom: 0.5px solid #3a4e66; /* Your thin line */
+    position: relative; /* Enable z-index */
+    z-index: 1;
   }
 
   .nav-links.is-open {
@@ -151,26 +156,33 @@ a {
     border: none;
     border-bottom: none; /* Remove bottom border so it doesn't double up with the line */
     text-decoration: none;
-    color: #ccc;
+    color: #e3e3e3;
     font-weight: bold;
+    box-shadow: none;
   }
 
   .nav-item {
     padding: 8px 16px;
+    border-top: none;
+    /* Perfectly aligns with the border */
     border-bottom: 1px solid #ccc;
     position: relative;
-    /* bottom: -0.5px; */
+    bottom: -0.5px;
     /* border: 0.5px solid #3a4e66; */
     /* border-right: 1px solid #ccc; */
     border-bottom: none;
+    box-shadow: none;
   }
   .nav-item.active-tab {
     background-color: #34465c;
     /* this border bottom is not working? */
     border-radius: 0px;
+
+    z-index: 2;
     background-color: #2d3641;
-    border-bottom: 1px solid #34465c;
-    z-index: 1;
+    /* border-bottom: 1px solid #2d3641; */
+    /* Match your background color */
+    z-index: 2;
   }
   .nav-item:hover {
     background-color: #313c48;
