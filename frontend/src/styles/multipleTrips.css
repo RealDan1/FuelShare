@@ -1,0 +1,9 @@
+#main-body-container-multiple-trips {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vp;
+  text-align: center;
+  padding: 20px;
+}
