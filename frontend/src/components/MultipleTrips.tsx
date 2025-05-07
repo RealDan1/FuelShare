@@ -1,4 +1,4 @@
-import '../styles/MultipleTrips.css';
+import '../styles/multipleTrips.css';
 
 const MultipleTrips = () => {
   return (
