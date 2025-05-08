@@ -7,6 +7,8 @@ type singleTripState = {
   updateLitresPerHundred: (by: number) => void;
   fuelCost: number;
   updateFuelCost: (by: number) => void;
+  peopleToSplit: number;
+  updatePeopleToSplit: (by: number) => void;
   total: number;
   updateTotal: (by: number) => void;
 };
@@ -18,6 +20,8 @@ export const useSingleTripStore = create<singleTripState>()((set) => ({
   updateLitresPerHundred: (by) => set(() => ({ litresPerHundred: by })),
   fuelCost: 0,
   updateFuelCost: (by) => set(() => ({ fuelCost: by })),
+  peopleToSplit: 0,
+  updatePeopleToSplit: (by) => set(() => ({ peopleToSplit: by })),
   total: 0,
   updateTotal: (by) => set(() => ({ total: by })),
 }));
