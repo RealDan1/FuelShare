@@ -60,7 +60,7 @@ const SingleTrip = () => {
   };
 
   // form on submit
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     updateDistance(Number(input.distance));
     updateLitresPerHundred(Number(input.litresPerHundred));
