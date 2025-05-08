@@ -26,7 +26,7 @@ const SingleTrip = () => {
   });
 
   //form on change
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     if (name == 'distance') {
       setInput((prevInput) => {
@@ -60,7 +60,7 @@ const SingleTrip = () => {
   };
 
   // form on submit
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     updateDistance(Number(input.distance));
     updateLitresPerHundred(Number(input.litresPerHundred));
@@ -85,7 +85,7 @@ const SingleTrip = () => {
           <input
             type="number"
             id="fuel-efficiency"
-            name="fuel-efficiency"
+            name="litresPerHundred"
             required
             placeholder="Fuel Efficiency (L/100km)"
             value={input.litresPerHundred}
@@ -95,7 +95,7 @@ const SingleTrip = () => {
           <input
             type="number"
             id="fuel-price"
-            name="fuel-price"
+            name="fuelCost"
             placeholder="Fuel Price (L)"
             value={input.fuelCost}
             onChange={handleChange}
@@ -103,8 +103,8 @@ const SingleTrip = () => {
           {fuelCost}
           <input
             type="number"
-            id="people"
-            name="people"
+            id="peopleToSplit"
+            name="peopleToSplit"
             required
             placeholder="Number of People:"
             value={input.peopleToSplit}
