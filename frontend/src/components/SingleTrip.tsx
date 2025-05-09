@@ -21,6 +21,7 @@ const SingleTrip = () => {
   const [input, setInput] = useState<input>({
     distance: '',
     litresPerHundred: '',
+    //change to consumption, price, SPLIT PEOPLE INTO LATER CALC. do trip calc separate
     fuelCost: '',
     peopleToSplit: '',
   });
