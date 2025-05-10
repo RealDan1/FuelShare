@@ -3,27 +3,27 @@ import { useSingleTripStore } from '../store';
 import { useState } from 'react';
 type input = {
   distance: string;
-  litresPerHundred: string;
-  fuelCost: string;
-  peopleToSplit: string;
+  consumption: string;
+  price: string;
+  split: string;
 };
 const SingleTrip = () => {
   //declare store state
   const distance = useSingleTripStore((state) => state.distance);
   const updateDistance = useSingleTripStore((state) => state.updateDistance);
-  const litresPerHundred = useSingleTripStore((state) => state.litresPerHundred);
-  const updateLitresPerHundred = useSingleTripStore((state) => state.updateLitresPerHundred);
-  const fuelCost = useSingleTripStore((state) => state.fuelCost);
-  const updateFuelCost = useSingleTripStore((state) => state.updateFuelCost);
-  const peopleToSplit = useSingleTripStore((state) => state.peopleToSplit);
-  const updatePeopleToSplit = useSingleTripStore((state) => state.updatePeopleToSplit);
+  const consumption = useSingleTripStore((state) => state.consumption);
+  const updateConsumption = useSingleTripStore((state) => state.updateConsumption);
+  const price = useSingleTripStore((state) => state.price);
+  const updatePrice = useSingleTripStore((state) => state.updatePrice);
+  const split = useSingleTripStore((state) => state.split);
+  const updateSplit = useSingleTripStore((state) => state.updateSplit);
   //declare input state
   const [input, setInput] = useState<input>({
     distance: '',
-    litresPerHundred: '',
+    consumption: '',
     //change to consumption, price, SPLIT PEOPLE INTO LATER CALC. do trip calc separate
-    fuelCost: '',
-    peopleToSplit: '',
+    price: '',
+    split: '',
   });
 
   //form on change
@@ -36,25 +36,25 @@ const SingleTrip = () => {
           distance: value,
         };
       });
-    } else if (name == 'litresPerHundred') {
+    } else if (name == 'consumption') {
       setInput((prevInput) => {
         return {
           ...prevInput,
-          litresPerHundred: value,
+          consumption: value,
         };
       });
-    } else if (name == 'fuelCost') {
+    } else if (name == 'price') {
       setInput((prevInput) => {
         return {
           ...prevInput,
-          fuelCost: value,
+          price: value,
         };
       });
-    } else if (name == 'peopleToSplit') {
+    } else if (name == 'split') {
       setInput((prevInput) => {
         return {
           ...prevInput,
-          peopleToSplit: value,
+          split: value,
         };
       });
     }
@@ -64,9 +64,9 @@ const SingleTrip = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     updateDistance(Number(input.distance));
-    updateLitresPerHundred(Number(input.litresPerHundred));
-    updateFuelCost(Number(input.fuelCost));
-    updatePeopleToSplit(Number(input.peopleToSplit));
+    updateConsumption(Number(input.consumption));
+    updatePrice(Number(input.price));
+    updateSplit(Number(input.split));
   };
   return (
     <div id="main-body-container">
@@ -86,32 +86,32 @@ const SingleTrip = () => {
           <input
             type="number"
             id="fuel-efficiency"
-            name="litresPerHundred"
+            name="consumption"
             required
             placeholder="Fuel Efficiency (L/100km)"
-            value={input.litresPerHundred}
+            value={input.consumption}
             onChange={handleChange}
           />
-          {litresPerHundred}
+          {consumption}
           <input
             type="number"
             id="fuel-price"
-            name="fuelCost"
+            name="price"
             placeholder="Fuel Price (L)"
-            value={input.fuelCost}
+            value={input.price}
             onChange={handleChange}
           />
-          {fuelCost}
+          {price}
           <input
             type="number"
-            id="peopleToSplit"
-            name="peopleToSplit"
+            id="split"
+            name="split"
             required
             placeholder="Number of People:"
-            value={input.peopleToSplit}
+            value={input.split}
             onChange={handleChange}
           />
-          {peopleToSplit}
+          {split}
           <button type="submit" id="calculate-button">
             Calculate
           </button>
