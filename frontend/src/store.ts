@@ -11,6 +11,8 @@ type singleTripState = {
   updateSplit: (by: number) => void;
   total: number;
   updateTotal: (by: number) => void;
+  splitTotal: number;
+  updateSplitTotal: (by: number) => void;
 };
 
 export const useSingleTripStore = create<singleTripState>()((set) => ({
@@ -24,4 +26,6 @@ export const useSingleTripStore = create<singleTripState>()((set) => ({
   updateSplit: (by) => set(() => ({ split: by })),
   total: 0,
   updateTotal: (by) => set(() => ({ total: by })),
+  splitTotal: 0,
+  updateSplitTotal: (by) => set(() => ({ splitTotal: by })),
 }));

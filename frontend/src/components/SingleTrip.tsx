@@ -1,6 +1,8 @@
 import '../styles/singleTrip.css';
 import { useSingleTripStore } from '../store';
 import { useState } from 'react';
+import { calculateFuelCost } from '../lib/calculateFuelCost';
+
 type input = {
   distance: string;
   consumption: string;
@@ -17,6 +19,11 @@ const SingleTrip = () => {
   const updatePrice = useSingleTripStore((state) => state.updatePrice);
   const split = useSingleTripStore((state) => state.split);
   const updateSplit = useSingleTripStore((state) => state.updateSplit);
+  const total = useSingleTripStore((state) => state.total);
+  const updateTotal = useSingleTripStore((state) => state.updateTotal);
+  const splitTotal = useSingleTripStore((state) => state.splitTotal);
+  const updateSplitTotal = useSingleTripStore((state) => state.updateSplitTotal);
+
   //declare input state
   const [input, setInput] = useState<input>({
     distance: '',
@@ -60,13 +67,16 @@ const SingleTrip = () => {
     }
   };
 
-  // form on submit
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     updateDistance(Number(input.distance));
     updateConsumption(Number(input.consumption));
     updatePrice(Number(input.price));
     updateSplit(Number(input.split));
+
+    const newTotal: number = calculateFuelCost(Number(input.price), Number(input.consumption), Number(input.distance));
+    updateTotal(newTotal);
+    updateSplitTotal(newTotal / Number(input.split));
   };
   return (
     <div id="main-body-container">
@@ -121,11 +131,11 @@ const SingleTrip = () => {
           <h2>Totals</h2>
           <div className="total-field">
             <p>Total Cost</p>
-            <p>—</p>
+            <p>{total}</p>
           </div>
           <div className="total-field">
             <p>Cost per person</p>
-            <p>—</p>
+            <p>{splitTotal}</p>
           </div>
         </div>
       </div>
