@@ -140,6 +140,7 @@ const SingleTrip = () => {
           <div className="total-field">
             <p>Cost per person</p>
             <p>R{splitTotal}</p>
+            {/* add conditional render for 0 here to replace "-"" with value once updated */}
           </div>
         </div>
       </div>
