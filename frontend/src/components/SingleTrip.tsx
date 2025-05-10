@@ -11,13 +11,13 @@ type input = {
 };
 const SingleTrip = () => {
   //declare store state
-  const distance = useSingleTripStore((state) => state.distance);
+  // const distance = useSingleTripStore((state) => state.distance);
   const updateDistance = useSingleTripStore((state) => state.updateDistance);
-  const consumption = useSingleTripStore((state) => state.consumption);
+  // const consumption = useSingleTripStore((state) => state.consumption);
   const updateConsumption = useSingleTripStore((state) => state.updateConsumption);
-  const price = useSingleTripStore((state) => state.price);
+  // const price = useSingleTripStore((state) => state.price);
   const updatePrice = useSingleTripStore((state) => state.updatePrice);
-  const split = useSingleTripStore((state) => state.split);
+  // const split = useSingleTripStore((state) => state.split);
   const updateSplit = useSingleTripStore((state) => state.updateSplit);
   const total = useSingleTripStore((state) => state.total);
   const updateTotal = useSingleTripStore((state) => state.updateTotal);
@@ -92,7 +92,7 @@ const SingleTrip = () => {
             value={input.distance}
             onChange={handleChange}
           />
-          {distance}
+
           <input
             type="number"
             id="fuel-efficiency"
@@ -102,7 +102,7 @@ const SingleTrip = () => {
             value={input.consumption}
             onChange={handleChange}
           />
-          {consumption}
+
           <input
             type="number"
             id="fuel-price"
@@ -111,7 +111,7 @@ const SingleTrip = () => {
             value={input.price}
             onChange={handleChange}
           />
-          {price}
+
           <input
             type="number"
             id="split"
@@ -121,7 +121,7 @@ const SingleTrip = () => {
             value={input.split}
             onChange={handleChange}
           />
-          {split}
+
           <button type="submit" id="calculate-button">
             Calculate
           </button>
