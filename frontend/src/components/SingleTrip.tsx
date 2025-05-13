@@ -135,12 +135,11 @@ const SingleTrip = () => {
           <h2>Totals</h2>
           <div className="total-field">
             <p>Total Cost</p>
-            <p>R{total}</p>
+            <p>{total ? `R` + total : '-'}</p>
           </div>
           <div className="total-field">
             <p>Cost per person</p>
-            <p>R{splitTotal}</p>
-            {/* add conditional render for 0 here to replace "-"" with value once updated */}
+            <p>{splitTotal ? `R` + splitTotal : '-'}</p>
           </div>
         </div>
       </div>
