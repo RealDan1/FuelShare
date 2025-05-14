@@ -6,6 +6,7 @@ const MainLayout = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>('single-trip');
 
+  //! insert logo png
   return (
     <div className="main-layout">
       <nav className="navigation">
@@ -38,6 +39,7 @@ const MainLayout = () => {
 
         <div className="settings">Settings</div>
         <div id="nav-logo">Logo</div>
+        {/* !insert logo */}
       </nav>
 
       <Outlet />
