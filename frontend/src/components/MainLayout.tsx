@@ -7,7 +7,7 @@ const MainLayout = () => {
   const [activeTab, setActiveTab] = useState<string>('single-trip');
 
   //! insert logo png
-  // ! Change to input Distance naddsad input Destination
+  // ! Change to input Distance and input Destination
   return (
     <div className="main-layout">
       <nav className="navigation">
