@@ -29,7 +29,6 @@ a:visited {
 }
 a {
   text-decoration: none;
-  color: inherit;
 }
 
 .footer {
@@ -46,22 +45,20 @@ a {
   width: 100%;
   border-bottom: 0.5px solid #3a4e66;
   position: relative;
-  color: #e3e3e3;
   /* margin-bottom: 20px; */
 }
 
 #nav-logo {
-  order: 1; /* Center on mobile */
+  order: 1;
   padding-left: 10px;
 }
 
 #nav-heading {
   order: 2;
-  color: #e3e3e3;
 }
 
 .hamburger-button {
-  order: 3; /* Right side on mobile */
+  order: 3;
   display: block;
   background-color: #1c242e;
   color: #e3e3e3;
@@ -78,7 +75,7 @@ a {
 }
 
 .settings {
-  order: 1; /* Left side on mobile */
+  order: 1;
   display: none;
 }
 
@@ -88,11 +85,11 @@ a {
   left: auto;
   right: 0.5%;
   background: #273241;
-  /* fairly intense shadow */
+
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   flex-direction: column;
   width: auto;
-  display: none; /* Hidden by default on mobile */
+  display: none;
   z-index: 10;
   padding: 0px;
   /* border: 1px solid #e3e3e3; */
@@ -100,12 +97,12 @@ a {
 }
 .nav-item {
   padding: 9px;
-  color: #e3e3e3;
+  color: #2a3749;
   font-weight: 300;
 }
 
 .nav-links.is-open {
-  display: flex; /* Show when menu is open */
+  display: flex;
 }
 
 .nav-item.active-tab {
@@ -126,28 +123,28 @@ footer {
   padding: 10px;
   background-color: #1c242e;
   color: #e3e3e3;
-  border-top: 0.5px solid #3a4e66; /* Your thin line */
+  border-top: 0.5px solid #3a4e66;
 }
 
 /* Desktop styles */
 @media (min-width: 768px) {
   #nav-logo {
-    order: 3; /* Left on desktop */
+    order: 3;
   }
 
   .hamburger-button {
-    display: none; /* Hide hamburger on desktop */
+    display: none;
   }
 
   .settings {
-    order: 1; /* Right on desktop */
+    order: 1;
     display: none;
   }
 
   .navigation {
     padding: 8px 16px;
-    border-bottom: 0.5px solid #3a4e66; /* Your thin line */
-    position: relative; /* Enable z-index */
+    border-bottom: 0.5px solid #3a4e66;
+    position: relative;
     z-index: 1;
   }
 
@@ -156,19 +153,19 @@ footer {
   }
 
   .nav-links {
-    order: 2; /* Middle on desktop */
+    order: 2;
     padding: 0px;
-    position: static; /* Not absolute anymore */
+    position: static;
     flex-direction: row;
     gap: 1rem;
-    display: flex; /* Always visible */
+    display: flex;
     width: auto;
     /* bottom: -4px; */
     display: inline-block;
     position: relative;
     background-color: #1c242e;
     border: none;
-    border-bottom: none; /* Remove bottom border so it doesn't double up with the line */
+    border-bottom: none;
     text-decoration: none;
     color: #e3e3e3;
     font-weight: bold;
@@ -178,7 +175,7 @@ footer {
   .nav-item {
     padding: 8px 16px;
     border-top: none;
-    /* Perfectly aligns with the border */
+
     border-bottom: 1px solid #ccc;
     position: relative;
     bottom: -0.5px;
@@ -189,13 +186,13 @@ footer {
   }
   .nav-item.active-tab {
     background-color: #34465c;
-    /* this border bottom is not working? */
+
     border-radius: 0px;
 
     z-index: 2;
     background-color: #2d3641;
     /* border-bottom: 1px solid #2d3641; */
-    /* Match your background color */
+
     z-index: 2;
   }
   .nav-item:hover {
