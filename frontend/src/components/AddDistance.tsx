@@ -1,5 +1,5 @@
-import '../styles/singleTrip.css';
-import { useSingleTripStore } from '../store';
+import '../styles/addDistance.css';
+import { useAddDistanceStore } from '../store';
 import { useState } from 'react';
 import { calculateFuelCost, round2 } from '../lib/calculateFuelCost';
 
@@ -9,20 +9,20 @@ type input = {
   price: string;
   split: string;
 };
-const SingleTrip = () => {
+const AddDistance = () => {
   //declare store state
   // const distance = useSingleTripStore((state) => state.distance);
-  const updateDistance = useSingleTripStore((state) => state.updateDistance);
+  const updateDistance = useAddDistanceStore((state) => state.updateDistance);
   // const consumption = useSingleTripStore((state) => state.consumption);
-  const updateConsumption = useSingleTripStore((state) => state.updateConsumption);
+  const updateConsumption = useAddDistanceStore((state) => state.updateConsumption);
   // const price = useSingleTripStore((state) => state.price);
-  const updatePrice = useSingleTripStore((state) => state.updatePrice);
+  const updatePrice = useAddDistanceStore((state) => state.updatePrice);
   // const split = useSingleTripStore((state) => state.split);
-  const updateSplit = useSingleTripStore((state) => state.updateSplit);
-  const total = useSingleTripStore((state) => state.total);
-  const updateTotal = useSingleTripStore((state) => state.updateTotal);
-  const splitTotal = useSingleTripStore((state) => state.splitTotal);
-  const updateSplitTotal = useSingleTripStore((state) => state.updateSplitTotal);
+  const updateSplit = useAddDistanceStore((state) => state.updateSplit);
+  const total = useAddDistanceStore((state) => state.total);
+  const updateTotal = useAddDistanceStore((state) => state.updateTotal);
+  const splitTotal = useAddDistanceStore((state) => state.splitTotal);
+  const updateSplitTotal = useAddDistanceStore((state) => state.updateSplitTotal);
 
   //declare input state
   const [input, setInput] = useState<input>({
@@ -146,4 +146,4 @@ const SingleTrip = () => {
     </div>
   );
 };
-export default SingleTrip;
+export default AddDistance;

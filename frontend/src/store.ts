@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-type singleTripState = {
+type addDistanceState = {
   distance: number;
   updateDistance: (by: number) => void;
   consumption: number;
@@ -15,7 +15,7 @@ type singleTripState = {
   updateSplitTotal: (by: number) => void;
 };
 
-export const useSingleTripStore = create<singleTripState>()((set) => ({
+export const useAddDistanceStore = create<addDistanceState>()((set) => ({
   distance: 0,
   updateDistance: (by) => set(() => ({ distance: by })),
   consumption: 0,

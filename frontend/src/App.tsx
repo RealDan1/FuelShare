@@ -1,15 +1,15 @@
-import SingleTrip from './components/SingleTrip';
+import AddDistance from './components/AddDistance'; // Updated import
 import MainLayout from './components/MainLayout';
 import { Routes, Route } from 'react-router';
-import MultipleTrips from './components/MultipleTrips';
+import AddDestination from './components/AddDestination'; // Updated import
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<SingleTrip />} />
-          <Route path="/multiple-trips" element={<MultipleTrips />} />
+          <Route index element={<AddDistance />} /> {/* Updated component */}
+          <Route path="/add-destination" element={<AddDestination />} /> {/* Updated component */}
         </Route>
       </Routes>
     </>

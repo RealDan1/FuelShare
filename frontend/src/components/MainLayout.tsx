@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const MainLayout = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<string>('single-trip');
+  const [activeTab, setActiveTab] = useState<string>('add-distance'); // Changed from 'single-trip'
 
   //! insert logo png
   // ! Change to input Distance and input Destination
@@ -24,18 +24,18 @@ const MainLayout = () => {
         <div className={`nav-links ${menuOpen ? 'is-open' : ''}`}>
           <Link
             to="/"
-            className={`nav-item ${activeTab == 'single-trip' ? 'active-tab' : ''}`}
-            onClick={() => setActiveTab('single-trip')}
+            className={`nav-item ${activeTab == 'add-distance' ? 'active-tab' : ''}`}
+            onClick={() => setActiveTab('add-distance')}
           >
-            Single Trip
+            Add Distance
           </Link>
 
           <Link
-            to="/multiple-trips"
-            className={`nav-item ${activeTab == 'multiple-trips' ? 'active-tab' : ''}`}
-            onClick={() => setActiveTab('multiple-trips')}
+            to="/add-destination"
+            className={`nav-item ${activeTab == 'add-destination' ? 'active-tab' : ''}`}
+            onClick={() => setActiveTab('add-destination')}
           >
-            Multiple Trips
+            Add Destination
           </Link>
         </div>
 
