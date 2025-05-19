@@ -11,13 +11,10 @@ type input = {
 };
 const AddDistance = () => {
   //declare store state
-  // const distance = useSingleTripStore((state) => state.distance);
+
   const updateDistance = useAddDistanceStore((state) => state.updateDistance);
-  // const consumption = useSingleTripStore((state) => state.consumption);
   const updateConsumption = useAddDistanceStore((state) => state.updateConsumption);
-  // const price = useSingleTripStore((state) => state.price);
   const updatePrice = useAddDistanceStore((state) => state.updatePrice);
-  // const split = useSingleTripStore((state) => state.split);
   const updateSplit = useAddDistanceStore((state) => state.updateSplit);
   const total = useAddDistanceStore((state) => state.total);
   const updateTotal = useAddDistanceStore((state) => state.updateTotal);
@@ -79,6 +76,7 @@ const AddDistance = () => {
       round2(Number(input.consumption)),
       round2(Number(input.distance))
     );
+
     updateTotal(round2(newTotal));
     updateSplitTotal(round2(newTotal / Number(input.split)));
   };
