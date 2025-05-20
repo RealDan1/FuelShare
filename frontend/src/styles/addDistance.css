@@ -104,7 +104,7 @@ button {
   margin: 0;
 }
 .input-group input:focus {
-  border-color: #3a7bd5;
+  border-color: #7c95b8;
 }
 .input-group label {
   position: absolute;
@@ -122,7 +122,7 @@ button {
   top: -12px;
   left: 8px;
   font-size: 0.85em;
-  color: #3a7bd5;
+  color: #7c95b8;
   background: #202a36;
   border-radius: 4px;
   padding: 2px;
