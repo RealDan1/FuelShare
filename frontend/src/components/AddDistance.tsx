@@ -82,7 +82,18 @@ const AddDistance = () => {
   };
   return (
     <div id="main-body-container">
-      <h1>Fuel Share Calculator</h1>
+      <div className="desktop-description">
+        <h1>Fuel Share Calculator</h1>
+        <p className="description-long">
+          Welcome to FuelShare! Effortlessly split your trip's fuel costs with friends. Enter your trip distance, your
+          car's fuel efficiency, the current fuel price, and how many people are sharing. We'll instantly calculate the
+          total cost and each person's share!
+        </p>
+      </div>
+      <div className="mobile-description">
+        <h2>FuelShare</h2>
+        <p className="description-short">Split your trip's fuel costs in seconds. Enter details below!</p>
+      </div>
       <div id="calculator-container">
         <form id="calculator-form" onSubmit={handleSubmit}>
           <div className="input-group">
