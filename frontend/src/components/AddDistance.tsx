@@ -85,44 +85,60 @@ const AddDistance = () => {
       <h1>Fuel Share Calculator</h1>
       <div id="calculator-container">
         <form id="calculator-form" onSubmit={handleSubmit}>
-          <input
-            type="number"
-            id="distance"
-            name="distance"
-            required
-            placeholder="Distance (km):"
-            value={input.distance}
-            onChange={handleChange}
-          />
+          <div className="input-group">
+            <input
+              type="number"
+              id="distance"
+              name="distance"
+              required
+              placeholder=" "
+              value={input.distance}
+              onChange={handleChange}
+              autoComplete="off"
+            />
+            <label htmlFor="distance">Distance (km)</label>
+          </div>
 
-          <input
-            type="number"
-            id="fuel-efficiency"
-            name="consumption"
-            required
-            placeholder="Fuel Efficiency (L/100km)"
-            value={input.consumption}
-            onChange={handleChange}
-          />
+          <div className="input-group">
+            <input
+              type="number"
+              id="fuel-efficiency"
+              name="consumption"
+              required
+              placeholder=" "
+              value={input.consumption}
+              onChange={handleChange}
+              autoComplete="off"
+            />
+            <label htmlFor="fuel-efficiency">Fuel Efficiency (L/100km)</label>
+          </div>
 
-          <input
-            type="number"
-            id="fuel-price"
-            name="price"
-            placeholder="Fuel Price (L)"
-            value={input.price}
-            onChange={handleChange}
-          />
+          <div className="input-group">
+            <input
+              type="number"
+              id="fuel-price"
+              name="price"
+              placeholder=" "
+              value={input.price}
+              onChange={handleChange}
+              autoComplete="off"
+            />
+            <label htmlFor="fuel-price">Fuel Price (L)</label>
+          </div>
 
-          <input
-            type="number"
-            id="split"
-            name="split"
-            required
-            placeholder="Number of People:"
-            value={input.split}
-            onChange={handleChange}
-          />
+          <div className="input-group">
+            <input
+              type="number"
+              id="split"
+              name="split"
+              required
+              placeholder=" "
+              value={input.split}
+              onChange={handleChange}
+              autoComplete="off"
+            />
+            <label htmlFor="split">Number of People</label>
+          </div>
 
           <button type="submit" id="calculate-button">
             Calculate

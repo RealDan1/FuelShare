@@ -39,7 +39,7 @@ input {
   margin: 0px 10px;
   border-radius: 5px;
   border: 1px solid #3a4e66;
-  background-color: #202a36;
+  background-color: #34455a;
   color: #e3e3e3;
 }
 
@@ -83,6 +83,51 @@ button {
   justify-content: space-between;
   margin: 10px 15px;
 }
+
+.input-group {
+  position: relative;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.input-group input {
+  width: 95%;
+  padding: 12px 10px 12px 10px;
+  font-size: 1rem;
+  background: #202a36;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+}
+.input-group input:focus {
+  border-color: #3a7bd5;
+}
+.input-group label {
+  position: absolute;
+  left: 9px;
+  top: 9px;
+  color: #aaa;
+  background: #202a36;
+  padding: 0 4px;
+  pointer-events: none;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -12px;
+  left: 8px;
+  font-size: 0.85em;
+  color: #3a7bd5;
+  background: #202a36;
+  border-radius: 4px;
+  padding: 2px;
+}
+
 @media (min-width: 768px) {
   #main-body-container {
     flex-direction: row;
