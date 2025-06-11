@@ -1,5 +1,5 @@
 import '../styles/addDistance.css';
-import { useAddDistanceStore } from '../store';
+// import { useAddDistanceStore } from '../store';
 import { useState } from 'react';
 import { calculateFuelCost, round2 } from '../lib/calculateFuelCost';
 
@@ -10,16 +10,9 @@ type input = {
   split: string;
 };
 const AddDistance = () => {
-  //declare store state
-
-  const updateDistance = useAddDistanceStore((state) => state.updateDistance);
-  const updateConsumption = useAddDistanceStore((state) => state.updateConsumption);
-  const updatePrice = useAddDistanceStore((state) => state.updatePrice);
-  const updateSplit = useAddDistanceStore((state) => state.updateSplit);
-  const total = useAddDistanceStore((state) => state.total);
-  const updateTotal = useAddDistanceStore((state) => state.updateTotal);
-  const splitTotal = useAddDistanceStore((state) => state.splitTotal);
-  const updateSplitTotal = useAddDistanceStore((state) => state.updateSplitTotal);
+  // local state for totals
+  const [total, setTotal] = useState<string>('');
+  const [splitTotal, setSplitTotal] = useState<string>('');
 
   //declare input state
   const [input, setInput] = useState<input>({
@@ -66,19 +59,13 @@ const AddDistance = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    updateDistance(round2(Number(input.distance)));
-    updateConsumption(round2(Number(input.consumption)));
-    updatePrice(round2(Number(input.price)));
-    updateSplit(round2(Number(input.split)));
-
     const newTotal: number = calculateFuelCost(
       round2(Number(input.price)),
       round2(Number(input.consumption)),
       round2(Number(input.distance))
     );
-
-    updateTotal(round2(newTotal));
-    updateSplitTotal(round2(newTotal / Number(input.split)));
+    setTotal(newTotal ? round2(newTotal).toString() : '');
+    setSplitTotal(newTotal && Number(input.split) ? round2(newTotal / Number(input.split)).toString() : '');
   };
   return (
     <div id="main-body-container">
