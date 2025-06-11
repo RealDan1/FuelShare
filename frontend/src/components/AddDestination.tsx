@@ -83,7 +83,7 @@ const AddDistance = () => {
         </p>
       </div>
       <div className="mobile-description">
-        <h2>FuelShare</h2>
+        <h2>Add Destination</h2>
         <p className="description-short">Split your trip's fuel costs in seconds. Enter details below!</p>
       </div>
       <div id="calculator-container">
