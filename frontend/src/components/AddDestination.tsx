@@ -35,7 +35,6 @@ const AddDistance = () => {
       setInput((prevInput) => ({ ...prevInput, origin: value }));
     } else if (name == 'destination') {
       setInput((prevInput) => ({ ...prevInput, destination: value }));
-
     } else if (name == 'consumption') {
       setInput((prevInput) => {
         return {
@@ -78,9 +77,9 @@ const AddDistance = () => {
       <div className="desktop-description">
         <h1>Fuel Share Calculator</h1>
         <p className="description-long">
-          Welcome to FuelShare! Effortlessly split your trip's fuel costs with friends. Enter your trip distance, your
-          car's fuel efficiency, the current fuel price, and how many people are sharing. We'll instantly calculate the
-          total cost and each person's share!
+          Welcome to FuelShare! Effortlessly split your trip's fuel costs with friends. Enter your trip origin,
+          destination, your car's fuel efficiency, the current fuel price, and how many people are sharing. We'll
+          calculate the distance via the Google MapsAPI and then calculate the total cost and each person's share!
         </p>
       </div>
       <div className="mobile-description">
