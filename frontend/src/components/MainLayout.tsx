@@ -25,7 +25,7 @@ const MainLayout = () => {
           <Link
             to="/"
             className={`nav-item ${activeTab == 'add-distance' ? 'active-tab' : ''}`}
-            onClick={() => setActiveTab('add-distance')}
+            onClick={() => { setActiveTab('add-distance'); setMenuOpen(false); }}
           >
             Add Distance
           </Link>
@@ -33,7 +33,7 @@ const MainLayout = () => {
           <Link
             to="/add-destination"
             className={`nav-item ${activeTab == 'add-destination' ? 'active-tab' : ''}`}
-            onClick={() => setActiveTab('add-destination')}
+            onClick={() => { setActiveTab('add-destination'); setMenuOpen(false); }}
           >
             Add Destination
           </Link>
