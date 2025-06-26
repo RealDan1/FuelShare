@@ -1,9 +1,14 @@
-import '../styles/addDistance.css';
-// import { useAddDistanceStore } from '../store';
-import { useState } from 'react';
-import { calculateFuelCost, round2 } from '../lib/calculateFuelCost';
+/*
+ * Deprecated AddDestination component. Use DestinationCalculator instead.
+ */
+const AddDestination = () => null;
+export default AddDestination;
+/*
 
-type input = {
+
+// import { useAddDistanceStore } from '../store'; { useState } from 'react'; { calculateFuelCost, round2 } from '../lib/calculateFuelCost';
+
+type TripForm = {
   origin: string;
   destination: string;
   // distance will be calculated via API and not input by user
@@ -13,7 +18,18 @@ type input = {
   split: string;
 };
 const AddDistance = () => {
-  // local state for totals
+  // Coordinates selected via autocomplete
+  const [origin, setOrigin] = useState<{ description: string; location: LatLng } | null>(null);
+  const [destination, setDestination] = useState<{ description: string; location: LatLng } | null>(null);
+
+  // Form values not covered by autocomplete
+  const [form, setForm] = useState<{ consumption: string; price: string; split: string }>({
+    consumption: '',
+    price: '',
+    split: '',
+  });
+
+  // Totals
   const [distance, setDistance] = useState<string>('');
   const [total, setTotal] = useState<string>('');
   const [splitTotal, setSplitTotal] = useState<string>('');
@@ -62,7 +78,7 @@ const AddDistance = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Use a placeholder value for distance until API integration
-    setDistance('To be calculated');
+    // will be updated after route select
     const placeholderDistance = 0;
     const newTotal: number = calculateFuelCost(
       round2(Number(input.price)),
@@ -159,6 +175,14 @@ const AddDistance = () => {
           <button type="submit" id="calculate-button">
             Calculate
           </button>
+          <button
+            type="button"
+            id="show-routes"
+            disabled={!origin || !destination}
+            onClick={() => setShowRoutes(true)}
+          >
+            Show Routes
+          </button>
         </form>
 
         <div id="totals">
@@ -180,4 +204,4 @@ const AddDistance = () => {
     </div>
   );
 };
-export default AddDistance;
+*/
