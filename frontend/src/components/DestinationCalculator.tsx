@@ -4,7 +4,7 @@
 import '../styles/addDistance.css';
 import { useState, useEffect } from 'react';
 import AutocompleteInput from './AutocompleteInput';
-import type { LatLng } from './AutocompleteInput';
+import type { LatLng } from '../types';
 import MapWithRoutes from './MapWithRoutes';
 import { calculateFuelCost, round2 } from '../lib/calculateFuelCost';
 

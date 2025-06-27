@@ -4,7 +4,7 @@
 import { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, Polyline } from '@react-google-maps/api';
 import axios from 'axios';
-import { LatLng } from './AutocompleteInput';
+import type { LatLng } from '../types';
 
 interface Props {
   origin: LatLng | null;

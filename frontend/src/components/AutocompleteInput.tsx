@@ -3,10 +3,11 @@
 // When the user picks a suggestion, we geocode it via /api/geocode and return the lat/lng
 
 import { useState, useEffect, ChangeEvent } from 'react';
+import type { LatLng } from '../types';
 import axios from 'axios';
 import debounce from 'lodash.debounce';
 
-export type LatLng = { lat: number; lng: number };
+
 
 interface Props {
   label: string;
